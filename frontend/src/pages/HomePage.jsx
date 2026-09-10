@@ -1,3 +1,6 @@
+const barberLogoUrl =
+  'https://img.freepik.com/vetores-premium/vetor-de-design-de-logotipo-vintage-de-barbearia_677726-187.jpg?w=2000'
+
 const services = [
   {
     title: 'Corte Clássico',
@@ -13,13 +16,24 @@ const services = [
   }
 ]
 
+function BarberLogo() {
+  return (
+    <img
+      className="brand-logo"
+      src={barberLogoUrl}
+      alt="Logo Barbearia Web"
+      loading="eager"
+    />
+  )
+}
+
 export default function HomePage() {
   return (
     <>
       <header className="site-header">
         <div className="container">
           <div className="brand">
-            <span className="brand-mark">✂</span>
+            <BarberLogo />
             <span>Barbearia Web</span>
           </div>
 
@@ -91,7 +105,7 @@ export default function HomePage() {
 
       <footer className="footer" id="contato">
         <div className="container">
-          <p>📍 Rua da Barbearia, 123 • (11) 99999-9999</p>
+          <p>Rua da Barbearia, 123 • (11) 99999-9999</p>
         </div>
       </footer>
     </>
