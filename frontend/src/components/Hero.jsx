@@ -24,7 +24,7 @@ export function Hero() {
         </div>
 
         <div className="hero-card">
-          <div className="hero-sub-card" />
+          <h2 className='hero-card-title'>Saiba nossos horários</h2>
           <div className="hero-card-inner">
             <h3>Horário de atendimento</h3>
             <ul>
