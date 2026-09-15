@@ -239,3 +239,201 @@ a {
   }
 }
 
+/* ============================================
+   PÁGINA DE AGENDAMENTO
+   ============================================ */
+
+.booking-page {
+  padding: 64px 0 72px;
+}
+
+.booking-container {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ---- Coluna da esquerda (texto) ---- */
+
+.booking-info h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  margin: 0 0 16px;
+}
+
+.booking-info p {
+  color: var(--muted);
+  font-size: 1.1rem;
+  max-width: 480px;
+  margin-bottom: 32px;
+}
+
+.booking-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 14px;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+/* ---- Card do formulário ---- */
+
+.booking-card {
+  background: linear-gradient(180deg, var(--panel) 0%, var(--panel-alt) 100%);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* ---- Formulário ---- */
+
+.booking-form {
+  display: grid;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: grid;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Campos de entrada */
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  font: inherit;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  width: 100%;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.booking-form input::placeholder,
+.booking-form textarea::placeholder {
+  color: var(--muted);
+  opacity: 0.6;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(212, 161, 92, 0.15);
+}
+
+/* Ícone do calendário no tema escuro */
+.booking-form input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.8);
+  cursor: pointer;
+}
+
+/* Fundo das opções do select (dropdown) */
+.booking-form select option {
+  background: var(--panel);
+  color: var(--text);
+}
+
+.booking-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Campo desabilitado (ex: horário antes de escolher a data) */
+.booking-form select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---- Botão de envio ---- */
+
+.form-submit {
+  width: 100%;
+  margin-top: 8px;
+  font-size: 1.05rem;
+  border: 0;
+  cursor: pointer;
+}
+
+.form-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ---- Mensagem de erro ---- */
+
+.form-error {
+  margin: 0;
+  padding: 12px 14px;
+  background: rgba(220, 60, 60, 0.12);
+  border: 1px solid rgba(220, 60, 60, 0.4);
+  border-radius: 12px;
+  color: #ff9b9b;
+  font-size: 0.95rem;
+}
+
+/* ---- Tela de sucesso ---- */
+
+.booking-success {
+  text-align: center;
+  display: grid;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+.booking-success h2 {
+  margin: 0;
+  color: var(--primary);
+}
+
+.booking-success p {
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ---- Responsivo ---- */
+
+@media (max-width: 760px) {
+  .booking-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-card {
+    padding: 24px;
+  }
+}
+
+/* Logo + nome clicáveis (sem perder o estilo) */
+.brand-link {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s;
+}
+
+.brand-link:hover {
+  opacity: 0.8;
+}

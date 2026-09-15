@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import { Header } from '../components/Header'
 import { Hero } from '../components/Hero'
 import { Section } from '../components/Section'
@@ -20,6 +22,18 @@ const services = [
 ]
 
 export default function HomePage() {
+  const { hash } = useLocation()
+
+  useEffect(() => {
+    if (hash) {
+      // Veio de outra página com âncora (ex: /#servicos)
+      const element = document.querySelector(hash)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+  }, [hash])
+
   return (
     <>
       <Header />
