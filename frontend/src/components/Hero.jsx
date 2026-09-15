@@ -19,7 +19,7 @@ export function Hero() {
 
           <div className="hero-actions">
             <Button href="#servicos" variant="primary">Ver serviços</Button>
-            <Button href="#contato">Reservar horário</Button>
+            <Button to="/agendamento">Reservar horário</Button>
           </div>
         </div>
 
