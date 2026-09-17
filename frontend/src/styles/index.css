@@ -437,3 +437,18 @@ a {
 .brand-link:hover {
   opacity: 0.8;
 }
+
+.footer-map {
+  max-width: 850px;
+  height: 280px;           /* ← altura do mapa */
+  margin: 0 auto;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.map-error {
+  color: #ff9b9b;
+  font-size: 0.95rem;
+}

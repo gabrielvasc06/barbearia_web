@@ -57,7 +57,7 @@ export default function HomePage() {
         </Section>
       </main>
 
-      <Footer />
+      <Footer showMap={true} />
     </>
   )
 }
