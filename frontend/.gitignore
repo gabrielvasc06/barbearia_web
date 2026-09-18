@@ -12,7 +12,7 @@ dist
 dist-ssr
 *.local
 
-# Variáveis de ambiente
+# Variáveis de Ambiente
 .env
 
 # Editor directories and files
