@@ -49,7 +49,7 @@ export default function HomePage() {
           </div>
         </Section>
 
-        <Section id="sobre" title="Sobre a barbearia">
+        <Section id="sobre" title="Sobre a Barbearia">
           <p>
             Um espaço pensado para valorizar a aparência, a rotina e a autoestima
             de cada cliente, com atenção nos detalhes e um atendimento acolhedor.
