@@ -18,8 +18,8 @@ export function Map() {
 
     map.current = new maptilersdk.Map({
       container: mapContainer.current,
-      style: maptilersdk.MapStyle.STREETS.DARK,  // tema escuro, combina com o site!
-      center: BARBEARIA_LOCATION,
+        style: maptilersdk.MapStyle.STREETS.DARK,  // Estilo do mapa (pode ser alterado, tanto para claro quanto para escuro)
+        center: BARBEARIA_LOCATION,
       zoom: 15
     })
 
