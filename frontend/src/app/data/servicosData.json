@@ -1,0 +1,47 @@
+{
+  "services": [
+    {
+      "id": "✂️",
+      "title": "Corte Clássico",
+      "description": "Estilo moderno com acabamento premium para o dia a dia.",
+      "price": "R$ 45",
+      "duration": "45 min"
+    },
+    {
+      "id": "🪒",
+      "title": "Barba e Design",
+      "description": "Sobrancelhas, contorno e acabamento refinado com atenção aos detalhes.",
+      "price": "R$ 35",
+      "duration": "30 min"
+    },
+    {
+      "id": "💈",
+      "title": "Corte + Barba",
+      "description": "O combo completo: corte e barba alinhados num único atendimento.",
+      "price": "R$ 70",
+      "duration": "1h 15min"
+    },
+    {
+      "id": "📅",
+      "title": "Agenda Personalizada",
+      "description": "Atendimento exclusivo, pontual e com experiência memorável.",
+      "price": "R$ 90",
+      "duration": "1h 30min"
+    },
+    {
+      "id": "👦",
+      "title": "Corte Infantil",
+      "description": "Atendimento paciente e divertido para os pequenos.",
+      "price": "R$ 35",
+      "duration": "40 min"
+    },
+    {
+      "id": "✨",
+      "title": "Sobrancelha",
+      "description": "Alinhamento e design de sobrancelha na navalha.",
+      "price": "R$ 20",
+      "duration": "15 min"
+    }
+    
+  ]
+}
