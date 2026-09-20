@@ -18,15 +18,15 @@ export function Hero() {
           </p>
 
           <div className="hero-actions">
-            <Button href="#servicos" variant="primary">Ver serviços</Button>
+            <Button to="/servicos" variant="primary">Ver serviços</Button>
             <Button to="/agendamento">Reservar horário</Button>
           </div>
         </div>
 
         <div className="hero-card">
-          <h2 className='hero-card-title'>Saiba nossos horários</h2>
+          <h3 className="hero-card-title">Saiba nossos horários</h3>
+
           <div className="hero-card-inner">
-            <h3>Horário de atendimento</h3>
             <ul>
               {openingHours.map((item) => (
                 <li key={item}>{item}</li>
