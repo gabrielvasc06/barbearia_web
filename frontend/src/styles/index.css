@@ -452,3 +452,148 @@ a {
   color: #ff9b9b;
   font-size: 0.95rem;
 }
+
+/* Menu com rota ativa */
+.nav a.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.brand-link {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s;
+}
+.brand-link:hover {
+  opacity: 0.8;
+}
+
+/* ===== SERVIÇOS ===== */
+.services-intro { padding-top: 64px; padding-bottom: 24px; }
+.services-intro h1 { font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 12px; }
+.services-lead { color: var(--muted); font-size: 1.1rem; max-width: 640px; }
+
+.service-card { display: flex; flex-direction: column; gap: 12px; }
+.service-icon { font-size: 2rem; }
+.service-card h3 { margin: 0; }
+.service-card p { color: var(--muted); margin: 0; flex: 1; }
+.service-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.service-price { font-size: 1.25rem; font-weight: 700; color: var(--primary); }
+.service-duration { color: var(--muted); font-size: 0.9rem; }
+
+.steps-section {
+  background: var(--panel-alt);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.step {
+  position: relative;
+  text-align: center;
+  padding: 32px 20px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.02);
+}
+.step-number {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: #111;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+.step-icon { font-size: 2rem; display: block; margin-bottom: 8px; }
+.step h3 { margin: 0 0 8px; }
+.step p { color: var(--muted); margin: 0; font-size: 0.95rem; }
+
+/* ===== CTA BAND (usada em Serviços e Sobre) ===== */
+.cta-band { padding: 64px 0; text-align: center; }
+.cta-band h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0 0 8px; }
+.cta-band p { color: var(--muted); margin: 0 0 24px; }
+
+/* ===== SOBRE ===== */
+.about-hero { padding-top: 64px; padding-bottom: 0; }
+.about-hero h1 { font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 12px; }
+.about-lead { color: var(--muted); font-size: 1.1rem; max-width: 640px; }
+
+/* ===== CONTATO ===== */
+.contact-section { padding-top: 64px; }
+.contact-section h1 { font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 12px; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; align-items: start; }
+.contact-info { display: grid; gap: 20px; }
+.contact-item { display: flex; align-items: flex-start; gap: 14px; }
+.contact-icon { font-size: 1.5rem; }
+.contact-item p { margin: 4px 0 0; color: var(--muted); }
+.contact-whatsapp { justify-self: start; margin-top: 8px; }
+.contact-map .footer-map { max-width: none; }
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 760px) {
+  .steps { grid-template-columns: 1fr; }
+  .step { margin-top: 14px; }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== HOME ENRIQUECIDA ===== */
+
+/* Destaques: fundo alternado pra criar ritmo visual */
+.highlights-section {
+  padding-top: 48px;
+  padding-bottom: 48px;
+  background: var(--panel-alt);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.highlight-card {
+  text-align: center;
+}
+
+.highlight-card .service-icon {
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Amostra de serviços */
+.services-teaser h2,
+.testimonials-section h2 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  margin: 0 0 24px;
+}
+
+.teaser-actions {
+  text-align: center;
+  margin-top: 32px;
+}
+
+/* Depoimentos */
+.testimonials-section {
+  padding-top: 48px;
+}
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.testimonial-text {
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+  font-style: italic;
+}
+
+.testimonial-author {
+  margin: 0;
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 0.95rem;
+}
