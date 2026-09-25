@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import { Header }from '../components/Header'
-import { EmptyMessage }from '../components/EmptyMessage'
+import { Header } from '../components/Header'
+import { EmptyMessage } from '../components/EmptyMessage'
 import { Footer } from '../components/Footer'
 import { Button } from '../components/Button'
 import { services, steps } from '../data/services'
@@ -24,29 +24,29 @@ export default function ServicosPage() {
         <section className="section services-list">
           <div className="container">
             <div className="cards">
-             {services.length > 0 ? (
-  services.map((service) => (
-    <article key={service.title} className="card service-card">
-      <span className="service-icon" aria-hidden="true">
-        {service.icon}
-      </span>
-      <h3>{service.title}</h3>
-      <p>{service.description}</p>
+              {services.length > 0 ? (
+                services.map((service) => (
+                  <article key={service.title} className="card service-card">
+                    <span className="service-icon" aria-hidden="true">
+                      {service.icon}
+                    </span>
+                    <h3>{service.title}</h3>
+                    <p>{service.description}</p>
 
-      <div className="service-meta">
-        <span className="service-price">{service.price}</span>
-        <span className="service-duration">⏱ {service.duration}</span>
-      </div>
+                    <div className="service-meta">
+                      <span className="service-price">{service.price}</span>
+                      <span className="service-duration">⏱ {service.duration}</span>
+                    </div>
 
-        <Button to="/agendamento" variant="primary">
-          Agendar
-        </Button>
-      </article>
-    ))
-  ) : (
-    <EmptyMessage message="Nenhum serviço disponível no momento." />
-  )}
-</div>
+                    <Button to="/agendamento" variant="primary">
+                      Agendar
+                    </Button>
+                  </article>
+                ))
+              ) : (
+                <EmptyMessage message="Nenhum serviço disponível no momento." />
+              )}
+            </div>
           </div>
         </section>
 
