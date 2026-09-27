@@ -1,41 +1,27 @@
-import { Link } from 'react-router-dom'
 import { Header } from '../components/Header'
 import { Hero } from '../components/Hero'
-import { Section } from '../components/Section'
 import { Footer } from '../components/Footer'
 import { Button } from '../components/Button'
 import { services } from '../data/services'
 
 const highlights = [
   {
-    icon: '🏆',
-    title: 'Profissionais premiados',
-    description: 'Equipe com anos de experiência e formação constante.'
+    number: '01',
+    title: 'Horário marcado',
+    description:
+      'Você escolhe o melhor horário e evita ficar esperando atendimento.'
   },
   {
-    icon: '🧴',
-    title: 'Produtos premium',
-    description: 'Utilizamos as melhores marcas do mercado em cada atendimento.'
+    number: '02',
+    title: 'Cuidado nos detalhes',
+    description:
+      'Cada serviço é feito levando em conta o seu estilo e o resultado que você procura.'
   },
   {
-    icon: '⏰',
-    title: 'Sem fila, sem espera',
-    description: 'Agende online e seja atendido exatamente no seu horário.'
-  }
-]
-
-const testimonials = [
-  {
-    name: 'Carlos M.',
-    text: 'Melhor corte da região. O barbeiro entende exatamente o que eu quero antes mesmo de eu terminar de explicar.'
-  },
-  {
-    name: 'Rafael S.',
-    text: 'Ambiente top, atendimento pontual e o resultado sempre impecável. Virei cliente fiel.'
-  },
-  {
-    name: 'André L.',
-    text: 'Agendei pelo site em 1 minuto, cheguei e fui atendido na hora. Experiência nota dez.'
+    number: '03',
+    title: 'Atendimento completo',
+    description:
+      'Cabelo, barba, acabamento e outros cuidados em um só lugar.'
   }
 ]
 
@@ -44,82 +30,235 @@ export default function HomePage() {
     <>
       <Header />
 
-      <main>
+      <main className="site-page">
+
         <Hero />
 
-        {/* Destaques */}
-        <section className="section highlights-section">
+        <section className="section home-intro-section">
+
           <div className="container">
-            <div className="cards highlights">
-              {highlights.map((item) => (
-                <article key={item.title} className="card highlight-card">
-                  <span className="service-icon" aria-hidden="true">{item.icon}</span>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
 
-        {/* Amostra dos serviços */}
-        <section className="section services-teaser">
-          <div className="container">
-            <h2>Serviços em destaque</h2>
+            <div className="section-heading">
 
-            <div className="cards">
-              {services.slice(0, 3).map((service) => (
-                <article key={service.title} className="card service-card">
-                  <span className="service-icon" aria-hidden="true">{service.icon}</span>
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
+              <span className="section-kicker">
+                Atendimento
+              </span>
 
-                  <div className="service-meta">
-                    <span className="service-price">{service.price}</span>
-                    <span className="service-duration">⏱ {service.duration}</span>
-                  </div>
-                </article>
-              ))}
+              <h2>
+                Simples no agendamento.
+                Cuidadoso no resultado.
+              </h2>
+
+              <p>
+                Você escolhe os serviços,
+                confere o valor antes e
+                reserva um horário sem
+                precisar esperar.
+              </p>
+
             </div>
 
-            <div className="teaser-actions">
-              <Button to="/servicos" variant="primary">Ver todos os serviços</Button>
+            <div className="experience-grid">
+
+              {highlights.map(
+                (item) => (
+
+                  <article
+                    key={item.number}
+                    className="experience-card"
+                  >
+
+                    <span className="experience-number">
+                      {item.number}
+                    </span>
+
+                    <h3>
+                      {item.title}
+                    </h3>
+
+                    <p>
+                      {item.description}
+                    </p>
+
+                  </article>
+
+                )
+              )}
+
             </div>
+
           </div>
+
         </section>
 
-        {/* Depoimentos */}
-        <section className="section testimonials-section">
-          <div className="container">
-            <h2>O que dizem nossos clientes</h2>
+        <section className="section home-services-section">
 
-            <div className="cards">
-              {testimonials.map((testimonial) => (
-                <article key={testimonial.name} className="card testimonial-card">
-                  <p className="testimonial-text">“{testimonial.text}”</p>
-                  <p className="testimonial-author">— {testimonial.name}</p>
-                </article>
-              ))}
+          <div className="container">
+
+            <div className="section-heading section-heading-row">
+
+              <div>
+
+                <span className="section-kicker">
+                  Serviços
+                </span>
+
+                <h2>
+                  Os mais procurados
+                </h2>
+
+              </div>
+
+              <Button
+                to="/servicos"
+                variant="primary"
+              >
+                Ver todos
+              </Button>
+
             </div>
+
+            <div className="home-services-grid">
+
+              {services
+                .slice(0, 4)
+                .map(
+                  (
+                    service,
+                    index
+                  ) => (
+
+                    <article
+                      key={service.title}
+                      className="home-service-card"
+                    >
+
+                      <div className="home-service-top">
+
+                        <span className="home-service-number">
+                          {String(
+                            index + 1
+                          ).padStart(
+                            2,
+                            '0'
+                          )}
+                        </span>
+
+                        <span className="home-service-duration">
+                          {service.duration}
+                        </span>
+
+                      </div>
+
+                      <h3>
+                        {service.title}
+                      </h3>
+
+                      <p>
+                        {
+                          service.description
+                        }
+                      </p>
+
+                      <div className="home-service-footer">
+
+                        <strong>
+                          {service.price}
+                        </strong>
+
+                        <Button
+                          to="/agendamento"
+                        >
+                          Agendar
+                        </Button>
+
+                      </div>
+
+                    </article>
+
+                  )
+                )}
+
+            </div>
+
           </div>
+
         </section>
 
-        {/* Sobre */}
-        <Section id="sobre" title="Sobre a barbearia">
-          <p>
-            Um espaço pensado para valorizar a aparência, a rotina e a autoestima
-            de cada cliente, com atenção nos detalhes e um atendimento acolhedor.
-          </p>
-        </Section>
+        <section className="home-about-band">
 
-        {/* CTA final */}
-        <section className="cta-band">
-          <div className="container">
-            <h2>Pronto para renovar o visual?</h2>
-            <p>Agende agora e garanta seu horário com os melhores.</p>
-            <Button to="/agendamento">Agendar agora</Button>
+          <div className="home-about-image" />
+
+          <div className="home-about-content">
+
+            <div>
+
+              <span className="section-kicker">
+                A barbearia
+              </span>
+
+              <h2>
+                Um espaço feito
+                para você sair
+                satisfeito.
+              </h2>
+
+              <p>
+                A proposta é simples:
+                atendimento pontual,
+                conversa direta e cuidado
+                em cada etapa do serviço.
+              </p>
+
+              <p>
+                Sem pressa, sem excesso e
+                sem complicação. O foco
+                está no que realmente
+                importa: um resultado que
+                combine com você.
+              </p>
+
+              <Button
+                to="/sobre"
+                variant="primary"
+              >
+                Conhecer a barbearia
+              </Button>
+
+            </div>
+
           </div>
+
         </section>
+
+        <section className="final-cta">
+
+          <div className="container final-cta-content">
+
+            <div>
+
+              <span className="section-kicker">
+                Seu próximo horário
+              </span>
+
+              <h2>
+                Escolha os serviços
+                e deixe o resto com a gente.
+              </h2>
+
+            </div>
+
+            <Button
+              to="/agendamento"
+              variant="primary"
+            >
+              Agendar agora
+            </Button>
+
+          </div>
+
+        </section>
+
       </main>
 
       <Footer showMap />
