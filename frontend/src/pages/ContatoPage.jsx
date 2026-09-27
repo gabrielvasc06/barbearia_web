@@ -3,10 +3,22 @@ import { Footer } from '../components/Footer'
 import { Map } from '../components/Map'
 
 const contactInfo = [
-  { icon: '📍', label: 'Endereço', value: 'Rua da Barbearia, 123 – São Paulo/SP' },
-  { icon: '📞', label: 'Telefone', value: '(81) 98654-0840' },
-  { icon: '🕐', label: 'Horários', value: 'Seg a Sex: 09h–19h • Sáb: 09h–17h' },
-  { icon: '📧', label: 'E-mail', value: 'contato@barbeariaweb.com.br' }
+  {
+    label: 'WhatsApp',
+    value: '(81) 98654-0840'
+  },
+  {
+    label: 'Funcionamento',
+    value: 'Segunda a sexta — 09h às 19h'
+  },
+  {
+    label: 'Sábado',
+    value: '09h às 17h'
+  },
+  {
+    label: 'Localização',
+    value: 'Consulte a rota no mapa ao lado'
+  }
 ]
 
 export default function ContatoPage() {
@@ -14,42 +26,162 @@ export default function ContatoPage() {
     <>
       <Header />
 
-      <main>
-        <section className="section contact-section">
-          <div className="container">
-            <h1>Fale com a gente</h1>
-            <p className="about-lead">
-              Tire dúvidas, faça sugestões ou agende direto pelo WhatsApp.
+      <main className="site-page">
+
+        <section className="page-hero contact-page-hero">
+
+          <div className="page-hero-overlay" />
+
+          <div className="container page-hero-content">
+
+            <span className="page-eyebrow">
+              Contato
+            </span>
+
+            <h1>
+              Fale direto
+              com a barbearia.
+            </h1>
+
+            <p>
+              Tire dúvidas sobre serviços,
+              horários ou atendimento pelo
+              WhatsApp.
             </p>
 
-            <div className="contact-grid">
-              <div className="contact-info">
-                {contactInfo.map((item) => (
-                  <div key={item.label} className="contact-item">
-                    <span className="contact-icon" aria-hidden="true">{item.icon}</span>
-                    <div>
-                      <strong>{item.label}</strong>
-                      <p>{item.value}</p>
-                    </div>
-                  </div>
-                ))}
+            <a
+              className="primary-button"
+              href="https://wa.me/5581986540840"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Chamar no WhatsApp
+            </a>
+
+          </div>
+
+        </section>
+
+        <section className="section contact-content-section">
+
+          <div className="container">
+
+            <div className="section-heading">
+
+              <span className="section-kicker">
+                Atendimento
+              </span>
+
+              <h2>
+                Informações da barbearia
+              </h2>
+
+            </div>
+
+            <div className="contact-layout">
+
+              <div className="contact-panel">
+
+                <div className="contact-panel-heading">
+
+                  <span>
+                    Canais de contato
+                  </span>
+
+                  <h3>
+                    Precisa falar com a gente?
+                  </h3>
+
+                  <p>
+                    Envie uma mensagem ou
+                    consulte os horários antes
+                    de vir.
+                  </p>
+
+                </div>
+
+                <div className="contact-list">
+
+                  {contactInfo.map(
+                    (
+                      item,
+                      index
+                    ) => (
+
+                      <div
+                        key={
+                          item.label
+                        }
+                        className="contact-row"
+                      >
+
+                        <span className="contact-number">
+                          {String(
+                            index + 1
+                          ).padStart(
+                            2,
+                            '0'
+                          )}
+                        </span>
+
+                        <div>
+
+                          <strong>
+                            {
+                              item.label
+                            }
+                          </strong>
+
+                          <p>
+                            {
+                              item.value
+                            }
+                          </p>
+
+                        </div>
+
+                      </div>
+
+                    )
+                  )}
+
+                </div>
 
                 <a
-                  className="cta-button contact-whatsapp"
+                  className="primary-button contact-button"
                   href="https://wa.me/5581986540840"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Chamar no WhatsApp
+                  Abrir WhatsApp
                 </a>
+
               </div>
 
-              <div className="contact-map">
+              <div className="contact-map-panel">
+
+                <div className="contact-map-heading">
+
+                  <span className="section-kicker">
+                    Mapa
+                  </span>
+
+                  <h3>
+                    Veja como chegar
+                  </h3>
+
+                </div>
+
                 <Map />
+
               </div>
+
             </div>
+
           </div>
+
         </section>
+
       </main>
 
       <Footer />

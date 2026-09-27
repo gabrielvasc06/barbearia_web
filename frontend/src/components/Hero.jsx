@@ -1,40 +1,109 @@
 import { Button } from './Button'
 
 const openingHours = [
-  'Segunda a Sexta: 09:00 às 19:00',
-  'Sábado: 09:00 às 17:00',
-  'Domingo: Fechado'
+  {
+    day: 'Segunda a sexta',
+    time: '09:00 às 19:00'
+  },
+  {
+    day: 'Sábado',
+    time: '09:00 às 17:00'
+  },
+  {
+    day: 'Domingo',
+    time: 'Fechado'
+  }
 ]
 
 export function Hero() {
   return (
-    <section className="hero" id="inicio">
-      <div className="container">
-        <div>
-          <h1>Estilo, presença e confiança.</h1>
+    <section
+      className="home-hero"
+      id="inicio"
+    >
+
+      <div className="hero-overlay" />
+
+      <div className="container home-hero-layout">
+
+        <div className="home-hero-copy">
+
+          <span className="page-eyebrow">
+            Barbearia Web
+          </span>
+
+          <h1>
+            Corte bem feito.
+            <br />
+            Sem complicação.
+          </h1>
+
           <p>
-            A barbearia ideal para quem busca atendimento de qualidade, ambiente
-            sofisticado e cortes pensados para realçar sua identidade.
+            Um espaço para cuidar do visual
+            com calma, atenção aos detalhes
+            e horário marcado.
           </p>
 
           <div className="hero-actions">
-            <Button to="/servicos" variant="primary">Ver serviços</Button>
-            <Button to="/agendamento">Reservar horário</Button>
+
+            <Button
+              to="/agendamento"
+              variant="primary"
+            >
+              Reservar horário
+            </Button>
+
+            <Button to="/servicos">
+              Conhecer serviços
+            </Button>
+
           </div>
+
         </div>
 
-        <div className="hero-card">
-          <h3 className="hero-card-title">Saiba nossos horários</h3>
+        <aside className="hero-hours">
 
-          <div className="hero-card-inner">
-            <ul>
-              {openingHours.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
+          <span className="hero-hours-label">
+            Funcionamento
+          </span>
+
+          <h2>
+            Horários da semana
+          </h2>
+
+          <div className="hero-hours-list">
+
+            {openingHours.map(
+              (item) => (
+                <div
+                  key={item.day}
+                  className="hero-hours-row"
+                >
+
+                  <span>
+                    {item.day}
+                  </span>
+
+                  <strong>
+                    {item.time}
+                  </strong>
+
+                </div>
+              )
+            )}
+
           </div>
-        </div>
+
+          <p className="hero-hours-note">
+            Atendimento realizado
+            preferencialmente com horário
+            reservado.
+          </p>
+
+        </aside>
+
       </div>
+
     </section>
   )
 }
