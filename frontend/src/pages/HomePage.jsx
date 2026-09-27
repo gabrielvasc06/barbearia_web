@@ -67,7 +67,6 @@ export default function HomePage() {
                     key={item.number}
                     className="experience-card"
                   >
-
                     <span className="experience-number">
                       {item.number}
                     </span>
@@ -79,7 +78,6 @@ export default function HomePage() {
                     <p>
                       {item.description}
                     </p>
-
                   </article>
 
                 )
@@ -155,9 +153,7 @@ export default function HomePage() {
                       </h3>
 
                       <p>
-                        {
-                          service.description
-                        }
+                        {service.description}
                       </p>
 
                       <div className="home-service-footer">
