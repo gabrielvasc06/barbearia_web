@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import { services } from '../data/services'
-import './AgendamentoPage.css'
+import '../styles/AgendamentoPage.css'
 
 const initialForm = {
   name: '',
