@@ -21,7 +21,6 @@ export function Hero() {
       className="home-hero"
       id="inicio"
     >
-
       <div className="hero-overlay" />
 
       <div className="container home-hero-layout">
@@ -79,7 +78,6 @@ export function Hero() {
                   key={item.day}
                   className="hero-hours-row"
                 >
-
                   <span>
                     {item.day}
                   </span>
@@ -87,7 +85,6 @@ export function Hero() {
                   <strong>
                     {item.time}
                   </strong>
-
                 </div>
               )
             )}
