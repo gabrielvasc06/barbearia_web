@@ -78,7 +78,3 @@ As rotas são definidas em `frontend/src/app/App.jsx`:
 - `frontend/src/app/data/`: contém arquivos JSON com dados usados pela aplicação.
 - `frontend/src/styles/`: contém os estilos das páginas.
 - `backend/`: espaço reservado para o futuro backend; ainda não possui uma API implementada.
-
-## Chave do mapa
-
-Crie uma chave na sua conta do MapTiler e mantenha-a no arquivo `frontend/.env`. Variáveis com prefixo `VITE_` ficam acessíveis no navegador; restrinja a chave por domínio nas configurações do MapTiler. O arquivo `.env` está no `.gitignore` e não deve ser enviado ao repositório.
