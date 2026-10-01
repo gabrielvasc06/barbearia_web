@@ -76,5 +76,5 @@ As rotas são definidas em `frontend/src/app/App.jsx`:
 # Integrantes do grupo
 
 - Pedro Vinícius de Almeida Santana
-- Vanderson Gabriel Vasconselos Barbosa
+- Vanderson Gabriel Vasconcelos Barbosa
 - Emanuele Vitoria Lima de Souza
