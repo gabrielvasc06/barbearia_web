@@ -72,3 +72,9 @@ As rotas são definidas em `frontend/src/app/App.jsx`:
 - `frontend/src/app/data/`: contém arquivos JSON com dados usados pela aplicação.
 - `frontend/src/styles/`: contém os estilos das páginas.
 - `backend/`: espaço reservado para o futuro backend; ainda não possui uma API implementada.
+
+#Integrantes do grupo
+
+- Pedro Vinícius de Almeida Santana
+- Vanderson Gabriel Vasconselos Barbosa
+- Emanuele Vitoria Lima de Souza
