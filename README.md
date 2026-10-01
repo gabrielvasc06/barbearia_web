@@ -30,12 +30,6 @@ Na raiz do projeto, instale as dependências do frontend:
 npm install --prefix frontend
 ```
 
-Configure a chave do mapa no arquivo `frontend/.env`:
-
-```env
-VITE_MAPTILER_KEY=sua_chave_do_maptiler
-```
-
 Depois, ainda na raiz do projeto, inicie o servidor:
 
 ```bash
