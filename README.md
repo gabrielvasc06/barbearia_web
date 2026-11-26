@@ -99,11 +99,11 @@ O Vite mostrará no terminal o endereço local para abrir no navegador. Se alter
 **Credenciais fictícias para demonstração do login:**
 
 ```text
-Usuário: emilys
-Senha: emilyspass
+Usuário: pedro.vinicius
+Senha: vinicius123
 ```
 
-Essas credenciais são públicas e fornecidas para testes do DummyJSON; não são dados de acesso a um sistema real.
+Essas credenciais liberam o acesso demonstrativo local do projeto; não são dados de acesso a um sistema real. Contas da DummyJSON continuam sendo autenticadas pela API.
 
 ## Outros comandos
 

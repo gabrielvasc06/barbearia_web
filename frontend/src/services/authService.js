@@ -1,5 +1,16 @@
 import { request, ApiError } from './http'
 
+const localDemoUser = {
+  id: 'pedro-vinicius-demo',
+  username: 'pedro.vinicius',
+  firstName: 'Pedro',
+  lastName: 'Vinicius',
+  email: 'pedro.vinicius@example.com',
+  image: ''
+}
+
+const localDemoToken = 'barbearia-local-demo-pedro-vinicius'
+
 // Converte o erro técnico em uma mensagem que o usuário entende.
 function getLoginErrorMessage(error) {
   if (error.isNetworkError) {
@@ -19,6 +30,13 @@ function getLoginErrorMessage(error) {
 }
 
 export async function login({ username, password }) {
+  if (username === localDemoUser.username && password === 'vinicius123') {
+    return {
+      accessToken: localDemoToken,
+      user: localDemoUser
+    }
+  }
+
   try {
     const data = await request('/auth/login', {
       method: 'POST',
@@ -47,6 +65,10 @@ export async function login({ username, password }) {
 
  // Consulta a API para verificar se o token é válido.
 export async function getCurrentUser(token) {
+  if (token === localDemoToken) {
+    return localDemoUser
+  }
+
   const data = await request('/auth/me', {
     method: 'GET',
     token
