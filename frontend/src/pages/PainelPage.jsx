@@ -31,7 +31,12 @@ export default function PainelPage() {
     listUsers(controller.signal)
       .then((results) => {
         if (controller.signal.aborted) return
-        setResult({ status: results.length ? 'ready' : 'empty', users: results })
+        const users = usersFallback.users.map((person, index) => ({
+          ...person,
+          image: results[index]?.image || person.image
+        }))
+
+        setResult({ status: results.length ? 'ready' : 'empty', users })
       })
       .catch((error) => {
         if (controller.signal.aborted) return
@@ -72,9 +77,6 @@ export default function PainelPage() {
         <section className="panel-people" aria-labelledby="users-heading">
           <h2 id="users-heading">Pessoas</h2>
           {result.status === 'loading' && <LoadingState>Carregando usuários…</LoadingState>}
-          {(result.status === 'ready' || result.status === 'empty') && (
-            <p className="panel-source">Dados remotos — DummyJSON (usuários fictícios, não são clientes da barbearia)</p>
-          )}
           {result.status === 'empty' && <EmptyState>Nenhum usuário encontrado.</EmptyState>}
           {result.status === 'forbidden' && (
             <ErrorState onRetry={retry}>A API negou o acesso à lista de usuários (403).</ErrorState>
